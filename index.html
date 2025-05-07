@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Crypto Airdrops</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      padding: 20px;
+    }
+    .airdrop {
+      background: #1e1e1e;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+    .airdrop h3 {
+      margin: 0 0 10px;
+    }
+    .btn {
+      background: #4caf50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .btn:hover {
+      background: #45a049;
+    }
+    .timer {
+      color: #ffcc00;
+      font-weight: bold;
+    }
+    .ad-box {
+      background: #333;
+      text-align: center;
+      padding: 10px;
+      margin: 30px 0;
+      border-radius: 8px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Daily Free Crypto Airdrops</h1>
+
+  <div class="ad-box">[Your Ad Banner or Google AdSense here]</div>
+
+  <div class="airdrop">
+    <h3>Pi Network Airdrop</h3>
+    <p>Claim 1 PI token daily from the Pi app.</p>
+    <p>Next Claim: <span class="timer" id="timer1">Loading...</span></p>
+    <a href="https://minepi.com" target="_blank" class="btn">Go to Airdrop</a>
+  </div>
+
+  <div class="airdrop">
+    <h3>CoreDAO Faucet</h3>
+    <p>Claim CORE token every 24 hours. Requires wallet.</p>
+    <p>Next Claim: <span class="timer" id="timer2">Loading...</span></p>
+    <a href="https://coredao.org" target="_blank" class="btn">Visit Faucet</a>
+  </div>
+
+  <div class="ad-box">Promote your token here. Contact admin.</div>
+
+  <script>
+    function startTimer(duration, displayId) {
+      let timer = duration, hours, minutes, seconds;
+      const display = document.getElementById(displayId);
+      setInterval(function () {
+        hours = parseInt(timer / 3600, 10);
+        minutes = parseInt((timer % 3600) / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        display.textContent =
+          (hours < 10 ? "0" : "") + hours + ":" +
+          (minutes < 10 ? "0" : "") + minutes + ":" +
+          (seconds < 10 ? "0" : "") + seconds;
+        if (--timer < 0) {
+          timer = duration; // Reset for testing (remove this in production)
+        }
+      }, 1000);
+    }
+
+    // Start countdowns (e.g., 24 hrs = 86400 secs)
+    window.onload = function () {
+      startTimer(86400, "timer1");
+      startTimer(72000, "timer2");
+    };
+  </script>
+
+</body>
+</html>
